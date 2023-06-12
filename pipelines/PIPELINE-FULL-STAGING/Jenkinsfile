@@ -12,6 +12,10 @@ pipeline {
             steps{
                 echo 'Static program analysis:'
                 sh "bash pipelines/PIPELINE-FULL-STAGING/static_test.sh"
+                echo 'Quality code testing'
+                sh "bash pipelines/PIPELINE-FULL-STAGING/quality_test.sh"
+                echo 'Security testing'
+                sh "bash pipelines/PIPELINE-FULL-STAGING/security_test.sh"                
                 echo 'Unit testing:'
                 sh "bash pipelines/PIPELINE-FULL-STAGING/unit_test.sh"
             }
